@@ -83,6 +83,8 @@ namespace PracticaCoreOk
         {
             string nombre = this.lstpedidos.SelectedItem.ToString();
 
+
+
             Pedidos pedido = this.repo.GetResumenPedido(nombre);
 
             this.txtcodigopedido.Text = "";
