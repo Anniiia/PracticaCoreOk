@@ -97,32 +97,7 @@ namespace PracticaCoreOk
             this.txtformaenvio.Text = pedido.FormaEnvio.ToString();
             this.txtimporte.Text = pedido.Importe.ToString();
 
-    
-
-
-            //Pedidos pedido = this.repo.GetPedidos(nombre);
-
-            //this.lstpedidos.Items.Clear();
-
-            //foreach (string ped in pedido.CodigoPedido)
-            //{
-            //    this.lstpedidos.Items.Add(ped);
-            //}
-            //List<string> pedidos = this.repo.GetPedidos(nombre);
-
-            //foreach (string data in departamentos)
-            //{
-            //    this.cmbDepartamentos.Items.Add(data);
-            //}
-            //this.txtcodigopedido.Text = "";
-            //this.txtfechaentrega.Text = "";
-            //this.txtformaenvio.Text = "";
-            //this.txtimporte.Text = "";
-
-            //this.txtcodigopedido.Text = pedido.CodigoPedido.ToString();
-            //this.txtfechaentrega.Text = pedido.FechaEntrega.ToString();
-            //this.txtformaenvio.Text = pedido.FormaEnvio.ToString();
-            //this.txtimporte.Text = pedido.Importe.ToString();
+ 
 
         }
     }

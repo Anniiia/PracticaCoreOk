@@ -46,7 +46,7 @@ namespace PracticaCoreOk.Repositories
         public Clientes GetResumenCliente(string nombreCliente)
         {
 
-
+            this.com.Parameters.Clear();
             SqlParameter pamNombre = new SqlParameter("@idcliente", nombreCliente);
             this.com.Parameters.Add(pamNombre);
             this.com.CommandType = CommandType.StoredProcedure;
@@ -82,10 +82,6 @@ namespace PracticaCoreOk.Repositories
 
         public List<string> GetPedidos(string nombreCliente)
         {
-            //this.com.CommandType = CommandType.StoredProcedure;
-            //this.com.CommandText = "SP_DEPARTAMENTOS";
-            //this.cn.Open();
-            //this.reader = this.com.ExecuteReader();
           
 
 
@@ -107,35 +103,13 @@ namespace PracticaCoreOk.Repositories
             this.cn.Close();
 
             return pedidos;
-            //while (this.reader.Read())
-            //{
-            //    string codigoPedido = this.reader["CODIGOPEDIDO"].ToString();
-            //    pedido.CodigoPedido = codigoPedido;
-            //    string codigoCliente = this.reader["CODIGOCLIENTE"].ToString();
-            //    pedido.CodigoCliente = codigoCliente;
-            //    string fecha = this.reader["FECHAENTREGA"].ToString();
-            //    pedido.FechaEntrega = fecha;
-            //    string forma = this.reader["FORMAENVIO"].ToString();
-            //    pedido.FormaEnvio = forma;
-            //    int importe = int.Parse(this.reader["IMPORTE"].ToString());
-            //    pedido.Importe = importe;
-            //}
-
-
-            //this.reader.Close();
-
-
-            //this.cn.Close();
-            //this.com.Parameters.Clear();
-
-            //return pedido;
 
 
         }
 
         public Pedidos GetResumenPedido(string nombrePedido)
         {
-
+            this.com.Parameters.Clear();
 
             SqlParameter pamNombre = new SqlParameter("@idpedido", nombrePedido);
             this.com.Parameters.Add(pamNombre);
@@ -169,6 +143,15 @@ namespace PracticaCoreOk.Repositories
             return pedido;
 
 
+        }
+
+        public void Elminar(string nombrePedido) {
+            SqlParameter pamNombre = new SqlParameter("@idcliente", nombrePedido);
+            this.com.Parameters.Add(pamNombre);
+            this.com.CommandType = CommandType.StoredProcedure;
+            this.com.CommandText = "SP_ELIMINAR";
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
         }
     }
 }
